@@ -262,7 +262,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6402582877322861147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aff887255f526cb4c8032c41ab9ef90a, type: 3}
+  m_Script: {fileID: 11500000, guid: 40db53b650a15cb488980fabe5275fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Muzzle: {fileID: 1704777094}

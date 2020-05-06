@@ -958,8 +958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponHold: {fileID: 1347099676}
-  StartingGun: {fileID: 6402582877322861141, guid: bec0f0523a20c484f9665c1e123587bd,
-    type: 3}
+  Guns:
+  - {fileID: 6402582877322861141, guid: bec0f0523a20c484f9665c1e123587bd, type: 3}
+  - {fileID: 6402582877322861141, guid: 685190c80feac9b4db095b0bcb4f5b94, type: 3}
 --- !u!1 &1510485045
 GameObject:
   m_ObjectHideFlags: 0

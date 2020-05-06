@@ -5,15 +5,15 @@ using UnityEngine;
 public class GunController : MonoBehaviour
 {
     public Transform WeaponHold;
-    public Gun StartingGun;
+    public Gun[] Guns;
 
     private Gun _equippedGun;
 
     private void Start()
     {
-        if(StartingGun != null)
+        if(Guns[0] != null)
         {
-            EquipGun(StartingGun);
+            EquipGun(Guns[0]);
         }
     }
 

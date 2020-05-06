@@ -11,5 +11,10 @@ public abstract class Gun : MonoBehaviour
     public float MilisecondsBetweenShots = 100;
     public float MuzzleVelocity = 35;
 
+    public int ProjectileDamage;
+
+    protected float _nextShotTime = 0.0f;
+
     public abstract void Shoot();
+    public abstract void OverrideDamage();
 }

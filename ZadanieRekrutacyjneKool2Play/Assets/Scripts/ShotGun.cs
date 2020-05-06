@@ -5,7 +5,6 @@ public class ShotGun : Gun
 {
     public int PelletCount;
     public float SpreadAngle;
-    public GameObject Pellet;
 
     private List<Quaternion> _pellets;
 
@@ -16,14 +15,26 @@ public class ShotGun : Gun
         {
             _pellets.Add(Quaternion.Euler(Vector3.zero));
         }
-    }
-
-    private void Update()
-    {
-
+        OverrideDamage();
     }
 
     public override void Shoot()
     {
+        if (Time.time > _nextShotTime)
+        {
+            _nextShotTime = Time.time + MilisecondsBetweenShots / 1000.0f;
+            for(int i = 0; i < PelletCount; ++i)
+            {
+                _pellets[i] = Random.rotation;
+                Projectile newProjectile = Instantiate(Projectile, Muzzle.position, Muzzle.rotation) as Projectile;
+                newProjectile.transform.rotation = Quaternion.RotateTowards(newProjectile.transform.rotation, _pellets[i], SpreadAngle);
+                newProjectile.SetSpeed(MuzzleVelocity);
+            }
+        }
+    }
+
+    public override void OverrideDamage()
+    {
+        Projectile.Damage = ProjectileDamage;
     }
 }

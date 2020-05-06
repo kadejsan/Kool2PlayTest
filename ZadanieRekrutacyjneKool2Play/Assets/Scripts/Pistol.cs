@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
-    private float _nextShotTime;
+    private void Awake()
+    {
+        OverrideDamage();
+    }
 
     public override void Shoot()
     {
@@ -14,5 +17,10 @@ public class Pistol : Gun
             Projectile newProjectile = Instantiate(Projectile, Muzzle.position, Muzzle.rotation) as Projectile;
             newProjectile.SetSpeed(MuzzleVelocity);
         }
+    }
+
+    public override void OverrideDamage()
+    {
+        Projectile.Damage = ProjectileDamage;
     }
 }

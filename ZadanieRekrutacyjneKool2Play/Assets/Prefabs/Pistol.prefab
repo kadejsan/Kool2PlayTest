@@ -271,3 +271,4 @@ MonoBehaviour:
     type: 3}
   MilisecondsBetweenShots: 100
   MuzzleVelocity: 35
+  ProjectileDamage: 1

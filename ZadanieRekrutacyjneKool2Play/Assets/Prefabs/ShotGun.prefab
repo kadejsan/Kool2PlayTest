@@ -269,8 +269,8 @@ MonoBehaviour:
   Muzzle: {fileID: 1704777094}
   Projectile: {fileID: 3504888393449468778, guid: 0f8f7426e5e1cb64b93242a18a2eb3da,
     type: 3}
-  MilisecondsBetweenShots: 100
+  MilisecondsBetweenShots: 500
   MuzzleVelocity: 35
+  ProjectileDamage: 3
   PelletCount: 10
   SpreadAngle: 20
-  Pellet: {fileID: 0}

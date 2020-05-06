@@ -11,6 +11,11 @@ public class LivingEntity : MonoBehaviour, IDamagable
 
     public event System.Action OnDeath;
 
+    public int GetHealth()
+    {
+        return (int)Health;
+    }
+
     protected virtual void Start()
     {
         Health = StartingHealth;

@@ -11,10 +11,6 @@ public class Spawner : MonoBehaviour
 
     private int _enemiesKilled = 0;
 
-    void Start()
-    {
-    }
-
     void Update()
     {
         if(Time.time > _nextSpawnTime)

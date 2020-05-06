@@ -9,6 +9,8 @@ public class LivingEntity : MonoBehaviour, IDamagable
     protected float Health;
     protected bool Dead;
 
+    public event System.Action OnDeath;
+
     protected virtual void Start()
     {
         Health = StartingHealth;
@@ -26,6 +28,10 @@ public class LivingEntity : MonoBehaviour, IDamagable
     protected void Die()
     {
         Dead = true;
+        if(OnDeath != null)
+        {
+            OnDeath();
+        }
         GameObject.Destroy(gameObject);
     }
 }

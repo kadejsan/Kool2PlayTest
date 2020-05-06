@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
 
     private float _nextSpawnTime;
 
+    private int _enemiesKilled = 0;
+
     void Start()
     {
     }
@@ -20,6 +22,17 @@ public class Spawner : MonoBehaviour
             _nextSpawnTime = Time.time + TimeBetweenSpawns;
 
             Enemy spawnedEnemy = Instantiate(Enemy, Vector3.zero, Quaternion.identity) as Enemy;
+            spawnedEnemy.OnDeath += OnEnemyDeath;
         }
+    }
+
+    void OnEnemyDeath()
+    {
+        _enemiesKilled++;
+    }
+
+    public int GetEnemiesKilled()
+    {
+        return _enemiesKilled;
     }
 }

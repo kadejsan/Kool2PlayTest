@@ -9,7 +9,10 @@ public class Projectile : MonoBehaviour
     public float Damage = 1;
     public float SecondsAlive = 1.0f;
 
-    private float _alive = 0.0f;
+    private void Start()
+    {
+        Destroy(gameObject, SecondsAlive);
+    }
 
     public void SetSpeed(float speed)
     {
@@ -21,12 +24,6 @@ public class Projectile : MonoBehaviour
         float moveDistance = Speed * Time.deltaTime;
         CheckCollisions(moveDistance);
         transform.Translate(Vector3.forward * moveDistance);
-
-        if (_alive > SecondsAlive)
-        {
-            Destroy(gameObject);
-        }
-        _alive += Time.deltaTime;
     }
 
     void CheckCollisions(float moveDistance)

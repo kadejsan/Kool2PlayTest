@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Gun : MonoBehaviour
 {
+    public string GunName;
+    
     public Transform Muzzle;
     public Projectile Projectile;
     public float MilisecondsBetweenShots = 100;

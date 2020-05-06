@@ -12,6 +12,11 @@ public class Player : LivingEntity
     private PlayerController _controller;
     private GunController _gunController;
 
+    public GunController GetGunController()
+    {
+        return _gunController;
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -43,6 +48,16 @@ public class Player : LivingEntity
         if(Input.GetMouseButton(0))
         {
             _gunController.Shoot();
+        }
+
+        // Weapon equip
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            _gunController.EquipGun(0);
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            _gunController.EquipGun(1);
         }
     }
 }

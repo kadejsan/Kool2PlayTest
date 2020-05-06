@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befbefa18f6750f40a4ccac032d80bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GunName: ShotGun
   Muzzle: {fileID: 1704777094}
   Projectile: {fileID: 3504888393449468778, guid: 0f8f7426e5e1cb64b93242a18a2eb3da,
     type: 3}

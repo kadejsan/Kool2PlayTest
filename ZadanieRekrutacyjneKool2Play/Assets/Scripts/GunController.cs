@@ -17,6 +17,14 @@ public class GunController : MonoBehaviour
         }
     }
 
+    public void EquipGun(int gunIndex)
+    {
+        if (gunIndex < Guns.Length)
+        {
+            EquipGun(Guns[gunIndex]);
+        }
+    }
+
     public void EquipGun(Gun gunToEquip)
     {
         if (_equippedGun != null)
@@ -32,5 +40,10 @@ public class GunController : MonoBehaviour
         {
             _equippedGun.Shoot();
         }
+    }
+
+    public string GetGunName()
+    {
+        return _equippedGun.GunName;
     }
 }
